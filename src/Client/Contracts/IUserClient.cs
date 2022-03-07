@@ -12,8 +12,10 @@ namespace Armut.Iterable.Client.Contracts
 
         Task<ApiResponse<RetrieveUserResponse>> GetByEmailAsync(string email);
         
-        Task<ApiResponse<BulkUpdateUserResponse>> BulkUpdateAsync(BulkUpadateUserRequest model);
+        Task<ApiResponse<BulkUpdateUserResponse>> BulkUpdateAsync(BulkUpdateUserRequest model);
         
+        Task<ApiResponse<BulkUpdateSubscriptionsResponse>> BulkUpdateSubscriptionsAsync(BulkUpdateSubscriptionsRequest model);
+
         Task<ApiResponse<RetrieveUserResponse>> GetByUserIdAsync(string userId);
         
         Task<ApiResponse<DeleteUserResponse>> DeleteByUserIdAsync(string userId);
@@ -27,5 +29,7 @@ namespace Armut.Iterable.Client.Contracts
         Task<ApiResponse<UpdateUserResponse>> UpdateAsync(UpdateUserRequest model);
         
         Task<ApiResponse<UpdateUserResponse>> UpdateEmailAsync(UpdateEmailRequest model);
+
+        Task<ApiResponse<UpdateUserResponse>> UpdateSubscriptionsAsync(UpdateSubscriptionsRequest model);
     }
 }

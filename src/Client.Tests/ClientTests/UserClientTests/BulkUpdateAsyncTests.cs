@@ -30,7 +30,7 @@ namespace Armut.Iterable.Client.Tests.ClientTests.UserClientTests
         {
             string path = "/api/users/bulkUpdate";
             
-            var request = new BulkUpadateUserRequest
+            var request = new BulkUpdateUserRequest
             {
                 Users = new UserModel[1]
                 {

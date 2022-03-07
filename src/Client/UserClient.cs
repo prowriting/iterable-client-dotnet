@@ -31,11 +31,18 @@ namespace Armut.Iterable.Client
             return await _client.GetAsync<RetrieveUserResponse>($"/api/users/{email}").ConfigureAwait(false);
         }
 
-        public async Task<ApiResponse<BulkUpdateUserResponse>> BulkUpdateAsync(BulkUpadateUserRequest model)
+        public async Task<ApiResponse<BulkUpdateUserResponse>> BulkUpdateAsync(BulkUpdateUserRequest model)
         {
             Ensure.ArgumentNotNull(model, nameof(model));
 
             return await _client.PostAsync<BulkUpdateUserResponse>("/api/users/bulkUpdate", model.Users).ConfigureAwait(false);
+        }
+
+        public async Task<ApiResponse<BulkUpdateSubscriptionsResponse>> BulkUpdateSubscriptionsAsync(BulkUpdateSubscriptionsRequest model)
+        {
+            Ensure.ArgumentNotNull(model, nameof(model));
+
+            return await _client.PostAsync<BulkUpdateSubscriptionsResponse>("/api/users/bulkUpdateSubscriptions", model.UpdateSubscriptionsRequests).ConfigureAwait(false);
         }
 
         public async Task<ApiResponse<RetrieveUserResponse>> GetByUserIdAsync(string userId)
@@ -86,5 +93,13 @@ namespace Armut.Iterable.Client
 
             return await _client.PostAsync<UpdateUserResponse>("/api/users/updateEmail", model).ConfigureAwait(false);
         }
+
+        public async Task<ApiResponse<UpdateUserResponse>> UpdateSubscriptionsAsync(UpdateSubscriptionsRequest model)
+        {
+            Ensure.ArgumentNotNull(model, nameof(model));
+
+            return await _client.PostAsync<UpdateUserResponse>("/api/users/updateSubscriptions", model).ConfigureAwait(false);
+        }
+
     }
 }

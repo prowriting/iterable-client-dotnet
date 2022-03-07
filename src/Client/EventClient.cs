@@ -21,5 +21,41 @@ namespace Armut.Iterable.Client
 
             return await _client.PostAsync<EventTrackResponse>("/api/events/track", model).ConfigureAwait(false);
         }
+
+        public async Task<ApiResponse<EventTrackResponse>> TrackInAppOpenAsync(InAppConsumeRequest model)
+        {
+            Ensure.ArgumentNotNull(model, nameof(model));
+            
+            return await _client.PostAsync<EventTrackResponse>("/api/events/trackInAppOpen", model).ConfigureAwait(false);
+        }
+
+        public async Task<ApiResponse<EventTrackResponse>> TrackInAppClickAsync(EventTrackInAppClickRequest model)
+        {
+            Ensure.ArgumentNotNull(model, nameof(model));
+
+            return await _client.PostAsync<EventTrackResponse>("/api/events/trackInAppClick", model).ConfigureAwait(false);
+        }
+
+        public async Task<ApiResponse<EventTrackResponse>> TrackInAppDeliveryAsync(EventTrackInAppDeliveryRequest model)
+        {
+            Ensure.ArgumentNotNull(model, nameof(model));
+
+            return await _client.PostAsync<EventTrackResponse>("/api/events/trackInAppDelivery", model).ConfigureAwait(false);
+        }
+
+        public async Task<ApiResponse<EventTrackResponse>> TrackInAppCloseAsync(EventTrackInAppCloseRequest model)
+        {
+            Ensure.ArgumentNotNull(model, nameof(model));
+
+            return await _client.PostAsync<EventTrackResponse>("/api/events/trackInAppClose", model).ConfigureAwait(false);
+        }
+
+        public async Task<ApiResponse<EventTrackResponse>> InAppConsumeAsync(InAppConsumeRequest model)
+        {
+            Ensure.ArgumentNotNull(model, nameof(model));
+
+            return await _client.PostAsync<EventTrackResponse>("/api/events/inAppConsume", model).ConfigureAwait(false);
+        }
+
     }
 }

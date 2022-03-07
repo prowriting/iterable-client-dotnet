@@ -9,5 +9,7 @@
         ListClient CreateListClient();
 
         EventClient CreateEventClient();
+        
+        InAppClient CreateInAppClient();
     }
 }

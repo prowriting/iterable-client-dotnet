@@ -4,4 +4,5 @@ namespace Armut.Iterable.Client.Models.UserModels
     {
         public bool MergeNestedObjects { get; set; }
     }
+
 }

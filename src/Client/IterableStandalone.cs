@@ -44,5 +44,10 @@ namespace Armut.Iterable.Client
         {
             return new EventClient(_restClient);
         }
+
+        public InAppClient CreateInAppClient()
+        {
+            return new InAppClient(_restClient);
+        }
     }
 }
