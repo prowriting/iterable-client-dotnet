@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Net;
+using System.Net.Http;
 
 namespace Armut.Iterable.Client.Core.Responses
 {
@@ -19,5 +20,10 @@ namespace Armut.Iterable.Client.Core.Responses
         public string Content { get; set; }
 
         public bool Error { get; set; }
+
+        public HttpResponseMessage Response { get; set; }
+
+        public string ErrorContent { get; set; }
+        public string ErrorRequest { get; set; }
     }
 }

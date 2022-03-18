@@ -35,14 +35,14 @@ namespace Armut.Iterable.Client
         {
             Ensure.ArgumentNotNull(model, nameof(model));
 
-            return await _client.PostAsync<BulkUpdateUserResponse>("/api/users/bulkUpdate", model.Users).ConfigureAwait(false);
+            return await _client.PostAsync<BulkUpdateUserResponse>("/api/users/bulkUpdate", model).ConfigureAwait(false);
         }
 
         public async Task<ApiResponse<BulkUpdateSubscriptionsResponse>> BulkUpdateSubscriptionsAsync(BulkUpdateSubscriptionsRequest model)
         {
             Ensure.ArgumentNotNull(model, nameof(model));
 
-            return await _client.PostAsync<BulkUpdateSubscriptionsResponse>("/api/users/bulkUpdateSubscriptions", model.UpdateSubscriptionsRequests).ConfigureAwait(false);
+            return await _client.PostAsync<BulkUpdateSubscriptionsResponse>("/api/users/bulkUpdateSubscriptions", model).ConfigureAwait(false);
         }
 
         public async Task<ApiResponse<RetrieveUserResponse>> GetByUserIdAsync(string userId)

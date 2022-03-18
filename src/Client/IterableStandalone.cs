@@ -30,6 +30,11 @@ namespace Armut.Iterable.Client
             return new UserClient(_restClient);
         }
 
+        public SubscriptionClient CreateSubscriptionClient()
+        {
+            return new SubscriptionClient(_restClient);
+        }
+
         public ListClient CreateListClient()
         {
             return new ListClient(_restClient);

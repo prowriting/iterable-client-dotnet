@@ -86,13 +86,17 @@ namespace Armut.Iterable.Client.Core
 
             HttpResponseMessage httpResponseMessage = await _client.SendAsync(requestMessage).ConfigureAwait(false);
             string content = await httpResponseMessage.Content.ReadAsStringAsync().ConfigureAwait(false);
-
+            var isError = httpResponseMessage.StatusCode != HttpStatusCode.OK;
             var apiResponse = new ApiResponse<T>
             {
                 HttpStatusCode = httpResponseMessage.StatusCode,
                 Headers = httpResponseMessage.Content.Headers.ToDictionary(pair => pair.Key, pair => pair.Value.First()),
                 UrlPath = path,
-                Model = JsonConvert.DeserializeObject<T>(content)
+                Model = JsonConvert.DeserializeObject<T>(content),
+                Error = isError,
+                Response = httpResponseMessage,
+                ErrorContent = isError ? content : "",
+                ErrorRequest = isError ? JsonConvert.SerializeObject(request):""
             };
 
             return apiResponse;

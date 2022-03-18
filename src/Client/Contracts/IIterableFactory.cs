@@ -3,6 +3,7 @@
     public interface IIterableFactory
     {
         UserClient CreateUserClient();
+        SubscriptionClient CreateSubscriptionClient();
 
         CommerceClient CreateCommerceClient();
 
