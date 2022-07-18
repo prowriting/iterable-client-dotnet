@@ -21,7 +21,7 @@ namespace Armut.Iterable.Client.Models.InAppModels
         public Content Content { get; set; }
         public bool SaveToInbox { get; set; }
         public InboxMetadata InboxMetadata { get; set; }
-        public int PriorityLevel { get; set; }
+        public double PriorityLevel { get; set; }
         public bool Read { get; set; }
         public bool JsonOnly { get; set; }
     }
