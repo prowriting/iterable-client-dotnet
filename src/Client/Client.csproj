@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net461;net45;netstandard2.0;netstandard1.3</TargetFrameworks>
-    <Version>0.6.3</Version>
+    <Version>0.6.5</Version>
     <Title>Armut iterable.com Client</Title>
     <Authors>Armut Teknoloji A.Ş.</Authors>
     <Owners>Armut Teknoloji A.Ş.</Owners>
@@ -28,6 +28,9 @@
     <EnableFrameworkPathOverride Condition="'$(BaseFrameworkPathOverrideForMono)' != ''">true</EnableFrameworkPathOverride>
     <!-- Add the Facades directory.  Not sure how else to do this. Necessary at least for .NET 4.5 -->
     <AssemblySearchPaths Condition="'$(BaseFrameworkPathOverrideForMono)' != ''">$(FrameworkPathOverride)/Facades;$(AssemblySearchPaths)</AssemblySearchPaths>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Product>PWA.Iterable.Client</Product>
+    <PackageId>PWA.Iterable.Client</PackageId>
   </PropertyGroup>
 
   <ItemGroup>

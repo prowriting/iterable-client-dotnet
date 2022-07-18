@@ -16,8 +16,8 @@ namespace Armut.Iterable.Client.Models.InAppModels
     {
         public string MessageId { get; set; }
         public int CampaignId { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public DateTime ExpiresAt { get; set; }
+        public long CreatedAt { get; set; }
+        public long ExpiresAt { get; set; }
         public Content Content { get; set; }
         public bool SaveToInbox { get; set; }
         public InboxMetadata InboxMetadata { get; set; }
