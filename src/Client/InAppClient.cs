@@ -20,7 +20,7 @@ namespace Armut.Iterable.Client
 
         public async Task<ApiResponse<GetMessagesResponse>> GetMessages(string email, string userId, int count, IterableMessagePlatform platform, string packageName)
         {
-            var idSection = string.IsNullOrEmpty(email)
+            var idSection = !string.IsNullOrEmpty(email)
                 ? $"email={email}"
                 : $"userId={userId}";
             var packageNameUrlFragment = string.IsNullOrEmpty(packageName) ? "" : $"&packageName={packageName}";
