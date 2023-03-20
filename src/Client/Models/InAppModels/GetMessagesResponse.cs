@@ -19,6 +19,7 @@ namespace Armut.Iterable.Client.Models.InAppModels
         public long CreatedAt { get; set; }
         public long ExpiresAt { get; set; }
         public Content Content { get; set; }
+        public object CustomPayload { get; set; }
         public bool SaveToInbox { get; set; }
         public InboxMetadata InboxMetadata { get; set; }
         public double PriorityLevel { get; set; }
