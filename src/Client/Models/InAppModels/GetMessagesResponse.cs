@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,6 +30,7 @@ namespace Armut.Iterable.Client.Models.InAppModels
     public class Content
     {
         public string Html { get; set; }
+        public WebInAppDisplaySettings WebInAppDisplaySettings { get; set; }
     }
 
     public class InboxMetadata
@@ -37,6 +38,11 @@ namespace Armut.Iterable.Client.Models.InAppModels
         public string Title { get; set; }
         public string Subtitle { get; set; }
         public string Icon { get; set; }
+    }
+
+    public class WebInAppDisplaySettings
+    {
+        public string Position { get; set; }
     }
 }
 
